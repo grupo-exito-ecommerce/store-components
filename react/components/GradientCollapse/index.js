@@ -52,12 +52,10 @@ function GradientCollapse(props) {
       setMaxHeight('auto')
     }
   }
-
   const handleCollapsedChange = (e, newValue) => {
     setCollapsed(newValue)
-    setPrevCollapsedProp(newValue)
-
     if (onCollapsedChange) {
+      setPrevCollapsedProp(collapsedProp)
       onCollapsedChange(e, newValue)
     }
   }
@@ -110,8 +108,8 @@ function GradientCollapse(props) {
                 {state === 'entered' || (collapsed && state !== 'exited') ? (
                   <FormattedMessage id="store/product-description.collapse.showLess" />
                 ) : (
-                  <FormattedMessage id="store/product-description.collapse.showMore" />
-                )}
+                    <FormattedMessage id="store/product-description.collapse.showMore" />
+                  )}
               </button>
             </div>
           </div>

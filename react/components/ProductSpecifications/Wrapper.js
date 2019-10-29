@@ -28,7 +28,6 @@ const ProductSpecificationsWrapper = ({
 
   const specifications =
     propsSpecifications || getSpecifications(productContext)
-
   return (
     <ProductSpecifications
       hiddenSpecifications={hiddenSpecifications}
@@ -37,6 +36,25 @@ const ProductSpecificationsWrapper = ({
       specifications={specifications}
     />
   )
+}
+
+ProductSpecificationsWrapper.getSchema = () => {
+  return {
+    "title": "admin/editor.product-specifications.title",
+    "description": "",
+    "type": "object",
+    "properties": {
+      "hiddenSpecifications": {
+        "items": {
+          "type": "string",
+          "title": "admin/editor.product-specifications.items-title"
+        },
+        "minItems": 0,
+        "title": "admin/editor.product-specifications.title",
+        "type": "array",
+      },
+    },
+  }
 }
 
 export default ProductSpecificationsWrapper
