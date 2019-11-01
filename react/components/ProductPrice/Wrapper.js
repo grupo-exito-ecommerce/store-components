@@ -67,6 +67,7 @@ const ProductPriceWrapper = ({
     listPrice,
     sellingPrice,
     installments,
+    skippedSimulation,
   } = props
 
   const productPriceProps = () => {
@@ -104,6 +105,7 @@ const ProductPriceWrapper = ({
       listPrice: listPrice || path(['ListPrice'], commertialOffer),
       sellingPrice: sellingPrice || path(['Price'], commertialOffer),
       installments: installments || path(['Installments'], commertialOffer),
+      skippedSimulation: skippedSimulation || path(['skippedSimulation'], commertialOffer),
       labelSellingPrice,
       showLabels,
       showInstallments,
